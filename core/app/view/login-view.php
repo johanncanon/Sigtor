@@ -126,11 +126,11 @@ if (Session::getUID() != "") {
         text-align: right;
     }
     .event {
-        border-top: 1px solid #b2dba1;
-        border-bottom: 1px solid #b2dba1;
-        background-image: linear-gradient(to bottom, #dff0d8 0px, #c8e5bc 100%);
+        border-top: 1px solid #103e64;
+        border-bottom: 1px solid #103e64;
+        background-image: linear-gradient(to bottom, #008def 0px, #3da0e4 100%);
         background-repeat: repeat-x;
-        color: #3c763d;
+        color: #ffffff;
         border-width: 1px;
         font-size: .75em;
         padding: 0 .75em;
@@ -189,6 +189,55 @@ if (Session::getUID() != "") {
     .table-tight-vert > tfoot > tr > td {
         padding-top: 0;
         padding-bottom: 0;
+    }
+    .index-social{
+        background-color:#003e65;
+        color:#fff;
+    }
+    .link-area .fa-li{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        border:solid 1px #fff;
+        list-style-type:none;
+        margin:5px;
+        display:inline-block;
+    }
+    .index-social a{
+        color:#fff;
+        font-size:25px;
+        display:block;
+        float:left;
+        padding:10px;
+    }
+    .index-link h3{
+        text-align:center;
+        color:#f1f1f1;
+        text-align:left;
+
+    }
+    .index-link{
+        background-color:#009fe3;
+    }
+    .index-link ul{
+        padding:0px;
+    }
+    .index-link ul li{
+        list-style-type:none;
+    }
+    .index-link ul li a{
+        text-decoration:none;
+        font-size:16px;
+        color:#fff;
+        display:block;
+        padding:5px 0;
+        text-align:left;
+    }
+    .index-link ul li a:hover{
+        text-decoration:underline;
+    }
+    .copy-c{
+        padding-top:15px;
     }
 
 </style>
@@ -660,7 +709,7 @@ if (Session::getUID() != "") {
             shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             date: (new Date()),
             daycss: ["c-sunday", "", "", "", "", "", "c-saturday"],
-            todayname: "Today",
+            todayname: "Hoy",
             thismonthcss: "current",
             lastmonthcss: "outside",
             nextmonthcss: "outside",
@@ -811,7 +860,7 @@ if (Session::getUID() != "") {
                     </div>
                 </div>
             </div>
-            
+
             <div class="[ col-xs-12 col-sm-5 ]">
                 <div class="[ panel panel-default ] panel-google-plus">
 
@@ -853,67 +902,189 @@ if (Session::getUID() != "") {
                         </div>
                     </div>
                 </div>
+                <div class="[ panel panel-default ] panel-google-plus">
+
+                    <div class="panel-heading" >
+                        <h3>Tabla de Posiciones</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <table class="table table-stripped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre Equipo</th>
+                                        <th>PG</th>
+                                        <th>PE</th>
+                                        <th>PP</th>
+                                        <th>DG</th>
+                                        <th>P</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Equipo A</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>   
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Equipo B</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Equipo C</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Equipo D</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Equipo E</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Equipo F</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Equipo G</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Equipo H</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>Equipo I</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10</th>
+                                        <td>Equipo J</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11</th>
+                                        <td>Equipo K</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12</th>
+                                        <td>Equipo L</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <section class="index-link">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>ABOUT US</h3>
-                    <P>Building Consensus among your Senior leaders to leverage your digital strengths and work on gaps which are hindering your growth.</P>
-                    <li class="fa-li"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="fa-li"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="fa-li"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="link-area">
+                        <h3 style="color: #fff;font-size: 14px;border-bottom: 1px solid;">ALCALDÍA MAYOR DE BOGOTÁ</h3>
+                        <li style="color: white;"><a href="http://bogota.gov.co" target="_blank" style="color: white;">Portal Bogotá</a></li>
+                        <li style="color: white;"><a href="http://secretariageneralalcaldiamayor.gov.co/" target="_blank" style="color: white;">Secretaría General</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>PRODUCT</h3>
-                    <ul>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="link-area">
+                        <h3 style="color: #fff;font-size: 14px;border-bottom: 1px solid;">ENTIDADES DE CONTROL </h3>
+                        <li style="color: white;"><a href="http://bogota.gov.co" target="_blank" style="color: white;">Portal Bogotá</a></li>
+                        <li style="color: white;"><a href="http://secretariageneralalcaldiamayor.gov.co/" target="_blank" style="color: white;">Secretaría General</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>COMPANY</h3>
-                    <ul>
-                    <li><a href="#"> Home</a></li>
-                    <li><a href="#"> Blog</a></li>
-                    <li><a href="#"> About</a></li>
-                    <li><a href="#"> contact</a></li>
-                    <li><a href="#"> Jobs</a></li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="link-area">
+                        <h3 style="color: #fff;font-size: 14px;border-bottom: 1px solid;">VÍNCULOS DE INTERÉS</h3>
+                        <li style="color: white;"><a href="http://bogota.gov.co" target="_blank" style="color: white;">Portal Bogotá</a></li>
+                        <li style="color: white;"><a href="http://secretariageneralalcaldiamayor.gov.co/" target="_blank" style="color: white;">Secretaría General</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>LEARM MORE</h3>
-                    <ul>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="link-area">
+                        <h3 style="color: #fff;font-size: 14px;border-bottom: 1px solid;">GOBIERNO EN LÍNEA </h3>
+                        <li style="color: white;"><a href="http://bogota.gov.co" target="_blank" style="color: white;">Portal Bogotá</a></li>
+                        <li style="color: white;"><a href="http://secretariageneralalcaldiamayor.gov.co/" target="_blank" style="color: white;">Secretaría General</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                        <li style="color: white;"><a href="http://sdmujer.gov.co/" target="_blank" style="color: white;">Secretaría de la Mujer</a></li>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="index-social">
-    <div class="container">
-    <div class="row index-social-link text-center">
-            <p class="copy-c">WITINNOVATION 2017.
-Unlocking Digital Opportunities.</p>
+        <br/><br/>
+    </section>
+    <section class="index-social">
+        <div class="container">
+            <div class="row index-social-link text-center">
+                <p class="copy-c">Departamento Administrativo del Servicio Civil Distrital</p>
+            </div>
         </div>
-        </div>
-</section>
+    </section>
 </div>
