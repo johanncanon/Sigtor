@@ -2,15 +2,38 @@
 class EquipoData {
 	public static $tablename = "Equipo";
 	public function EquipoData(){
-		$this->NombreEquipo = "";
-		$this->TipoEquipo = "";
+		$this->Nombre_Equipo = "";
+//		$this->TipoEquipo = "";
+		$this->PuntosEquipo_idPuntosEquipo = "";
+		$this->Entidad_idEntidad = "";
+		$this->Num_Jugadores = "";
+		$this->RepresentanteNombre = "";
+		$this->EntrenadorNombre = "";
+		$this->Tel_Representante = "";
+		$this->Correo_Representante = "";
 	}
 
-	public function getEntidad(){ return EntidadData::getById($this->IdEntidad); }
+	public function getEntidad(){ 
+            return EntidadData::getById($this->Entidad_idEntidad);         
+        }
 
+        /**
+         * funcion para ingresar Equipos desde la vista
+         */
 	public function add(){
-		$sql = "insert into ".self::$tablename." (NombreEquipo,TipoEquipo,IdEntidad) ";
-		$sql .= "value (\"$this->NombreEquipo\",\"$this->TipoEquipo\",$this->IdEntidad)";
+            
+               $sql = "INSERT INTO ".self::$tablename." ( `PuntosEquipo_idPuntosEquipo`, "
+                            . " `Entidad_idEntidad`, `Nombre_Equipo`, `Num_Jugadores`,"
+                            . " `RepresentanteNombre`, `EntrenadorNombre`, "
+                            . " `Tel_Representante`, `Correo_Representante` ) "
+                    . "VALUES ( 2 , 2 ,"
+                            . " \"$this->Nombre_Equipo\" ,"
+                            . " \"$this->Num_Jugadores\" ,"
+                            . " \"$this->RepresentanteNombre\" ,"
+                            . " \"$this->EntrenadorNombre\", "
+                            . " \"$this->Tel_Representante\" ,"
+                            . " \"$this->Correo_Representante\" )";                  
+
 		Executor::doit($sql);
 	}
 
@@ -31,12 +54,24 @@ class EquipoData {
 
 
 	public function update(){
-		$sql = "update ".self::$tablename." set NombreEquipo=\"$this->NombreEquipo\",TipoEquipo=\"$this->TipoEquipo\",IdEntidad=\"$this->IdEntidad where IdEquipo=$this->id";
+//		$sql = "update ".self::$tablename." set NombreEquipo=\"$this->NombreEquipo\",TipoEquipo=\"$this->TipoEquipo\",IdEntidad=\"$this->IdEntidad where IdEquipo=$this->id";
+                $sql = "UPDATE `Equipo` "
+                            . " SET "
+                            . " `PuntosEquipo_idPuntosEquipo`= 1 ,"
+                            . " `Entidad_idEntidad`= 1 ,"
+                            . " `Nombre_Equipo`= 'MODIFICADO DESDE NETBEANS',"
+                            . " `Num_Jugadores`= 7 ,"
+                            . " `RepresentanteNombre`= 'JOHAN CAÑON' ,"
+                            . " `EntrenadorNombre`= 'PEPITO PEREZ' ,"
+                            . " `Tel_Representante`= '123456789' ,"
+                            . " `Correo_Representante`= 'CORREODELANOCHE@GMAIL.COM'  "
+                    . " WHERE IdEquipo $this->id ";
 		Executor::doit($sql);
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where IdEquipo=$id";
+//		$sql = "select * from ".self::$tablename." where IdEquipo=$id";
+            $sql = "select * from Equipo where IdEquipo=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new EquipoData());
 	}
