@@ -12,13 +12,19 @@
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">Nombre de la entidad*</label>
                         <div class="col-md-6">
-                            <input type="text" name="NombreEntidad" required class="form-control" id="name" placeholder="Nombre entidad">
+                            <input type="text" name="Nombre_Entidad" required class="form-control" id="name" placeholder="Nombre entidad">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail1" class="col-lg-2 control-label">Imagen</label>
+                        <label for="inputEmail1" class="col-lg-2 control-label">Telefono*</label>
                         <div class="col-md-6">
-                            <input type="file" name="Foto" id="image" placeholder="" style="opacity: 100; position: initial;">
+                            <input type="text" name="Telefono" required class="form-control" id="name" placeholder="Telefono">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">Direcció*</label>
+                        <div class="col-md-6">
+                            <input type="text" name="Direccion" required class="form-control" id="name" placeholder="Direccion">
                         </div>
                     </div>
 

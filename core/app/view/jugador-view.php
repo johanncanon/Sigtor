@@ -28,21 +28,23 @@
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th>Nombre completo</th>
-			<th>Sexo</th>
-			<th>Tipo de Documento</th>
-			<th>Numero de Documento</th>
-			<th>Area</th>
+			<th>Edad</th>
+			<th>Cedula</th>
+			<th>Telefono</th>
+			<th>Celular</th>
+                        <th>Entidad</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->Nombre." ".$user->Apellido; ?></td>
-				<td><?php echo $user->Sexo; ?></td>
-				<td><?php echo $user->TipoDocumento; ?></td>
-				<td><?php echo $user->NumeroDocumento; ?></td>
-				<td><?php if($user->IdEquipo!=null){ echo $user->getEquipo()->NombreEquipo; } ?></td>
+				<td><?php echo $user->Nombres." ".$user->Apellidos; ?></td>
+				<td><?php echo $user->Edad; ?></td>
+				<td><?php echo $user->Cedula; ?></td>
+				<td><?php echo $user->Telefono; ?></td>
+                                <td><?php echo $user->Celular; ?></td>
+				<td><?php if($user->Equipo_idEquipo!=null){ echo $user->getEquipo()->Nombre_Equipo; } ?></td>
 				<td style="width:280px;">
 				<a href="index.php?view=medichistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
 				<a href="index.php?view=editmedic&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>

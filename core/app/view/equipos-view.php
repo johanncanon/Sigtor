@@ -39,7 +39,7 @@
                                 <td><?php echo $user->Correo_Representante; ?></td>
                                 <td><?php
                                     if ($user->Entidad_idEntidad != null) {
-                                        echo $user->getEntidad()->NombreEntidad;
+                                        echo $user->getEntidad()->Nombre_Entidad;
                                     }
                                     ?>
                                 </td>

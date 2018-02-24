@@ -30,15 +30,19 @@
 			<th>Nombre del lugar</th>
 			<th>Direccion</th>
 			<th>Telefono</th>
+                        <th>Barrio</th>
+			<th>Localidad</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->NombreUbicacion; ?></td>
+				<td><?php echo $user->Nombre_Lugar; ?></td>
 				<td><?php echo $user->Direccion; ?></td>
 				<td><?php echo $user->Telefono; ?></td>
+                                <td><?php echo $user->Barrio; ?></td>
+				<td><?php echo $user->Localidad; ?></td>
 				
 				<td style="width:280px;">
 				<a href="index.php?view=medichistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
