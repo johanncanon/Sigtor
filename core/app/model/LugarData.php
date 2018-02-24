@@ -2,19 +2,24 @@
 class LugarData {
 	public static $tablename = "Ubicacion";
 	public function LugarData(){
-		$this->title = "";
-		$this->email = "";
-		$this->image = "";
-		$this->password = "";
-		$this->is_public = "0";
-		$this->created_at = "NOW()";
+		$this->Nombre_Lugar = "";
+		$this->Direccion = "";
+		$this->Telefono = "";
+		$this->Barrio = "";
+		$this->Localidad = "";
 	}
 
 	public function getEquipo(){ return EquipoData::getById($this->IdEquipo); }
-
-	public function add(){
-		$sql = "insert into ".self::$tablename." (NombreUbicacion,Direccion,Telefono) ";
-		$sql .= "value (\"$this->NombreUbicacion\",\"$this->Direccion\",$this->Telefono)";
+        	public function add(){
+            
+               $sql = "INSERT INTO ".self::$tablename." ( `Nombre_Lugar`, "
+                            . " `Direccion`, `Telefono`,"
+                            . " `Barrio`, `Localidad`) "
+                    . "VALUES (\"$this->Nombre_Lugar\","
+                            . " \"$this->Direccion\" ,"
+                            . " \"$this->Telefono\" ,"
+                            . " \"$this->Barrio\" ,"
+                            . " \"$this->Localidad\" )";    
 		Executor::doit($sql);
 	}
 

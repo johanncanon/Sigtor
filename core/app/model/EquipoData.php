@@ -22,18 +22,17 @@ class EquipoData {
          */
 	public function add(){
             
-               $sql = "INSERT INTO ".self::$tablename." ( `PuntosEquipo_idPuntosEquipo`, "
-                            . " `Entidad_idEntidad`, `Nombre_Equipo`, `Num_Jugadores`,"
+               $sql = "INSERT INTO ".self::$tablename." ( `Entidad_idEntidad`, "
+                            . " `Nombre_Equipo`, `Num_Jugadores`,"
                             . " `RepresentanteNombre`, `EntrenadorNombre`, "
                             . " `Tel_Representante`, `Correo_Representante` ) "
-                    . "VALUES ( 2 , 2 ,"
+                    . "VALUES ($this->Entidad_idEntidad ,"
                             . " \"$this->Nombre_Equipo\" ,"
-                            . " \"$this->Num_Jugadores\" ,"
+                            . " $this->Num_Jugadores,"
                             . " \"$this->RepresentanteNombre\" ,"
                             . " \"$this->EntrenadorNombre\", "
                             . " \"$this->Tel_Representante\" ,"
                             . " \"$this->Correo_Representante\" )";                  
-
 		Executor::doit($sql);
 	}
 
@@ -72,14 +71,14 @@ class EquipoData {
 
 	public static function getById($id){
 //		$sql = "select * from ".self::$tablename." where IdEquipo=$id";
-            $sql = "select * from Equipo where IdEquipo=$id";
+            $sql = "select * from Equipo where idEquipo=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new EquipoData());
 	}
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by IdEquipo desc";
+		$sql = "select * from ".self::$tablename." order by idEquipo desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new EquipoData());
 	}

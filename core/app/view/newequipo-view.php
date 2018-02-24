@@ -71,27 +71,13 @@ $categories = EntidadData::getAll();
                                    id="Correo_Representante" placeholder="Correo del Representante">
                         </div>
                     </div>                                                          
-                    
-<!--                    <div class="form-group">
-                        <label for="inputEmail1" class="col-lg-2 control-label">Tipo de Equipo*</label>
-                        <div class="col-md-6">
-                            <select name="TipoEquipo" class="form-control">
-                                <option value="">-- SELECCIONE --</option>      
-                                <option value="Futboal 8">Futboal 8</option>
-                                <option value="Futboal 5">Futboal 5</option>
-                                <option value="Voleibol">Voleibol</option>
-                                <option value="Baloncesto">Baloncesto</option>
-                            </select>
-                        </div>
-                    </div>-->
-                    
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">Entidad a la que pertenece*</label>
                         <div class="col-md-6">
                             <select name="Entidad_idEntidad" class="form-control">
                                 <option value="">-- SELECCIONE --</option>      
                                 <?php foreach ($categories as $cat): ?>
-                                    <option value="<?php echo $cat->Entidad_idEntidad; ?>"><?php echo $cat->NombreEntidad; ?></option>      
+                                    <option value="<?php echo $cat->idEntidad; ?>"><?php echo $cat->Nombre_Entidad; ?></option>      
                                 <?php endforeach; ?>
                             </select>
                         </div>

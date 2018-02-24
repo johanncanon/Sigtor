@@ -27,14 +27,17 @@
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th>Nombre de la entidad</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->NombreEntidad; ?></td>
-			
+				<td><?php echo $user->Nombre_Entidad; ?></td>
+                                <td><?php echo $user->Telefono; ?></td>
+                                <td><?php echo $user->Direccion; ?></td>
 				<td style="width:280px;">
 				<a href="index.php?view=editentidad&id=<?php echo $user->IdEntidad;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?view=delpacient&id=<?php echo $user->IdEntidad;?>" class="btn btn-danger btn-xs">Eliminar</a>

@@ -7,9 +7,9 @@ class EntidadData {
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (NombreEntidad) ";
-		$sql .= "value (\"$this->NombreEntidad\")";
-                echo $sql;
+		$sql = "insert into ".self::$tablename." (Nombre_Entidad,Telefono,Direccion) ";
+		$sql .= "value (\"$this->Nombre_Entidad\",\"$this->Telefono\",\"$this->Direccion\")";
+                //echo $sql;
 		Executor::doit($sql);
 	}
         public function add_with_image(){
@@ -41,14 +41,14 @@ class EntidadData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where IdEntidad=$id";
+		$sql = "select * from ".self::$tablename." where idEntidad=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new EntidadData());
 	}
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by IdEntidad desc";
+		$sql = "select * from ".self::$tablename." order by idEntidad desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new EntidadData());
 	}

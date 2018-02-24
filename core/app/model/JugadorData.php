@@ -2,23 +2,40 @@
 class JugadorData {
 	public static $tablename = "Participante";
 	public function JugadorData(){
-		$this->title = "";
-		$this->email = "";
-		$this->image = "";
-		$this->password = "";
-		$this->is_public = "0";
-		$this->created_at = "NOW()";
+		$this->Equipo_idEquipo = "";
+		$this->Nombres = "";
+		$this->Apellidos = "";
+		$this->Edad = "";
+		$this->Cedula = "";
+                $this->Telefono = "";
+                $this->Celular = "";
+                $this->Tiene_ARL = "";
+                $this->Sexo = "";
+		
 	}
 
-	public function getEquipo(){ return EquipoData::getById($this->IdEquipo); }
-
+	public function getEquipo(){ 
+            return EquipoData::getById($this->Equipo_idEquipo); 
+            
+        }
 	public function add(){
-		$sql = "insert into ".self::$tablename." (Nombre,Apellido,Sexo,TipoDocumento,NumeroDocumento,FechaNacimiento,IdEquipo) ";
-		$sql .= "value (\"$this->Nombre\",\"$this->Apellido\",\"$this->Sexo\",\"$this->TipoDocumento\",$this->NumeroDocumento,\"$this->FechaNacimiento\",$this->IdEquipo)";
-                echo $sql;
+            
+               $sql = "INSERT INTO ".self::$tablename." ( `Equipo_idEquipo`, "
+                            . " `Nombres`, `Apellidos`,"
+                            . " `Edad`, `Cedula`, "
+                            . " `Telefono`, "
+                            . " `Celular`, `Tiene_ARL`, `Sexo` ) "
+                    . "VALUES ($this->Equipo_idEquipo ,"
+                            . " \"$this->Nombres\" ,"
+                            . " \"$this->Apellidos\" ,"
+                            . " \"$this->Edad\" ,"
+                            . " \"$this->Cedula\" ,"
+                            . " \"$this->Telefono\", "
+                            . " \"$this->Celular\" ,"
+                            . " \"$this->Tiene_ARL\" ,"
+                            . " \"$this->Sexo\" )";    
 		Executor::doit($sql);
 	}
-
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
 		Executor::doit($sql);
