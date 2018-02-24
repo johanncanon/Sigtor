@@ -10,8 +10,7 @@
                 <div class="btn-group">
                     <a href="index.php?view=newequipo" class="btn btn-default"><i class='fa fa-support'></i> Nuevo Equipo</a>
                 </div>
-                <?php
-                
+                <?php               
                 $users = EquipoData::getAll();
                 if (count($users) > 0) {
                     // si hay usuarios
@@ -45,8 +44,14 @@
                                     ?>
                                 </td>
                                 <td style="width:280px;">
-                                    <a href="index.php?view=editequipo&id=<?php echo $user->IdEquipo; ?>" class="btn btn-warning btn-xs">Editar</a>
-                                    <a href="index.php?view=delmedic&id=<?php echo $user->IdEquipo; ?>" class="btn btn-danger btn-xs">Eliminar</a>
+                                    <a href="index.php?view=editequipo&id=<?php echo $user->idEquipo; ?>" 
+                                       class="btn btn-warning btn-xs">
+                                        Editar
+                                    </a>
+                                    <a href="index.php?view=delmedic&id=
+                                        <?php echo $user->idEquipo; ?>" class="btn btn-danger btn-xs">
+                                        Eliminar
+                                    </a>
 
                                 </td>
                             </tr>

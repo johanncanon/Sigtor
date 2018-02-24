@@ -57,15 +57,16 @@ class EquipoData {
 //		$sql = "update ".self::$tablename." set NombreEquipo=\"$this->NombreEquipo\",TipoEquipo=\"$this->TipoEquipo\",IdEntidad=\"$this->IdEntidad where IdEquipo=$this->id";
                 $sql = "UPDATE `Equipo` "
                             . " SET "
-                            . " `PuntosEquipo_idPuntosEquipo`= 1 ,"
-                            . " `Entidad_idEntidad`= 1 ,"
+//                            . " `PuntosEquipo_idPuntosEquipo`= 1 ,"
+//                            . " `Entidad_idEntidad`= 1 ,"
                             . " `Nombre_Equipo`= 'MODIFICADO DESDE NETBEANS',"
-                            . " `Num_Jugadores`= 7 ,"
-                            . " `RepresentanteNombre`= 'JOHAN CAÑON' ,"
-                            . " `EntrenadorNombre`= 'PEPITO PEREZ' ,"
-                            . " `Tel_Representante`= '123456789' ,"
-                            . " `Correo_Representante`= 'CORREODELANOCHE@GMAIL.COM'  "
-                    . " WHERE IdEquipo $this->id ";
+//                            . " `Num_Jugadores`= 7 ,"
+//                            . " `RepresentanteNombre`= 'JOHAN CAÑON' ,"
+//                            . " `EntrenadorNombre`= 'PEPITO PEREZ' ,"
+//                            . " `Tel_Representante`= '123456789' ,"
+//                            . " `Correo_Representante`= 'CORREODELANOCHE@GMAIL.COM'  "
+                    . " WHERE IdEquipo = $this->id ";
+
 		Executor::doit($sql);
 	}
 

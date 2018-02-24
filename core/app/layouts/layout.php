@@ -9,11 +9,19 @@
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="assets/css/material-dashboard.css" rel="stylesheet"/>
+        <link href="assets/css/material-dashboard.css" rel="stylesheet"/>       
         <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-        <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+        
+<!--        <script src="assets/js/jquery.min.js" type="text/javascript"></script>-->
         <script src="assets/js/myjs.js" type="text/javascript"></script>
+        
+        <!--ESTILOS DEL DATAPIKER-->
+      <!-- Include Required Prerequisites -->
+      <link rel="stylesheet" type="text/css" media="all" href="assets/css/daterangepicker.css" />
+     
+
+      
+
         <?php if (isset($_GET["view"]) && $_GET["view"] == "home"): ?>
             <link href='assets/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
             <link href='assets/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
@@ -42,36 +50,36 @@
                                     <p>Inicio</p>
                                 </a>
                             </li>
-                            <!--                  <li>
-                                                  <a href="./?view=reservations">
-                                                      <i class="fa fa-calendar"></i>
-                                                      <p>Citas</p>
-                                                  </a>
-                                              </li>
-                                              <li>
-                                                  <a href="./?view=pacients">
-                                                      <i class="fa fa-male"></i>
-                                                      <p>Pacientes</p>
-                                                  </a>
-                                              </li>
-                                              <li>
-                                                  <a href="./?view=medics">
-                                                      <i class="fa fa-support"></i>
-                                                      <p>Medicos</p>
-                                                  </a>
-                                              </li>
-                                              <li>
-                                                  <a href="./?view=categories">
-                                                      <i class="fa fa-th-list"></i>
-                                                      <p>Categorias</p>
-                                                  </a>
-                                              </li>
-                                              <li>
-                                                  <a href="./?view=reports">
-                                                      <i class="fa fa-area-chart"></i>
-                                                      <p>Reporte de Citas</p>
-                                                  </a>
-                                              </li>-->
+<!--                            <li>
+                                <a href="./?view=reservations">
+                                    <i class="fa fa-calendar"></i>
+                                    <p>Citas</p>
+                                </a>
+                            </li>-->
+<!--                            <li>
+                                <a href="./?view=pacients">
+                                    <i class="fa fa-male"></i>
+                                    <p>Pacientes</p>
+                                </a>
+                            </li>-->
+<!--                            <li>
+                                <a href="./?view=medics">
+                                    <i class="fa fa-support"></i>
+                                    <p>Medicos</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./?view=categories">
+                                    <i class="fa fa-th-list"></i>
+                                    <p>Categorias</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./?view=reports">
+                                    <i class="fa fa-area-chart"></i>
+                                    <p>Reporte de Citas</p>
+                                </a>
+                            </li>-->
                             <li>
                                 <a href="./?view=entidad">
                                     <i class="fa fa-building"></i>
@@ -104,6 +112,24 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="./?view=fases">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    <p>Fases</p>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="./?view=fases-partidos">
+                                    <i class="fa fa-calendar-plus-o"></i>
+                                    <p>Partidos de Fases</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./?view=grupos">
+                                    <i class="fa fa-database"></i>
+                                    <p>Grupos</p>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="./?view=reservations">
                                     <i class="fa fa-calendar"></i>
                                     <p>Programar Partido</p>
@@ -118,7 +144,7 @@
                         </ul>
                     </div>
                 </div>
-
+                <!--MENU LATERAL CUANDO SE ACTIVA EL RESPONSIVE-->
                 <div class="main-panel">
                     <nav class="navbar navbar-transparent navbar-absolute">
                         <div class="container-fluid">
@@ -188,7 +214,12 @@
     </body>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.js"></script>
+    <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+    
+<!--    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>-->
     <script src="assets/js/material.min.js" type="text/javascript"></script>
 
     <!--  Charts Plugin -->
@@ -210,8 +241,18 @@
         $(document).ready(function () {
 
             // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
+            demo.initDashboardPageCharts();           
 
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fecha_ini').daterangepicker({
+                "startDate": "02/17/2018",
+                "endDate": "02/23/2018"
+            }, function (start, end, label) {
+                console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+            });
         });
     </script>
 

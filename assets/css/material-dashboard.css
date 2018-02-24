@@ -1,38 +1,23 @@
 /*! =========================================================
  *
- Material Dashboard - V1.1.0
-*
-* =========================================================
-*
-* Copyright 2016 Creative Tim (http://www.creative-tim.com/product/material-dashboard)
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \|     |// '.
- *                 / \|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
- * ========================================================= */
-/* ANIMATION */
-/* SHADOWS */
-/* Shadows (from mdl http://www.getmdl.io/) */
+ * Material Dashboard - V1.1.0
+*/
+
+
+/*
+*===============================================================================
+*   DISEÑO DE ESTILOS PROPIOS PARA LOS AJUSTES DEL SIGTOR    
+*   @autor: Johan Cañon
+*/
+
+p .vs-sigto{
+    padding-top: 29px !important;
+    font-size: 1.3em !important;
+}
+
+/*
+================================================================================
+*/
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;
@@ -1781,6 +1766,30 @@ output {
   border-radius: 0;
   font-weight: 400;
 }
+
+th > .form-control-sigto{
+    border: 0 !important;
+    background-image: linear-gradient(#003e65, #003e65), linear-gradient(#D2D2D2, #D2D2D2) !important;
+    background-size: 0 2px, 100% 1px !important;
+    background-repeat: no-repeat !important;
+    background-position: center bottom, center calc(100% - 1px) !important;
+    background-color: transparent !important;
+    transition: background 0s ease-out !important;
+    float: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    font-weight: 600 !important;
+}
+
+.input-group-fs {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin: -29px;
+    bottom: 10px;
+    width: 15%;
+}
+
 .form-control::-moz-placeholder,
 .form-group .form-control::-moz-placeholder {
   color: #AAAAAA;
@@ -5078,4 +5087,7 @@ footer .btn {
     margin-left: -20px;
     margin-right: -20px;
   }
+  
 }
+
+

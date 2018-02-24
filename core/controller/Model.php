@@ -19,7 +19,7 @@ class Model {
 	public static function getFullpath($modelname){
 		return Core::$root."core/app/model/".$modelname.".php";
 	}
-
+        
 	public static function many($query,$aclass){
 		$cnt = 0;
 		$array = array();
