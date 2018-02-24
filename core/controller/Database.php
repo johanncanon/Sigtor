@@ -3,7 +3,10 @@ class Database {
 	public static $db;
 	public static $con;
 	function Database(){
-		$this->user="root";$this->pass="";$this->host="localhost";$this->ddbb="Sigtor";
+            $this->user="root_sigtor";
+                $this->pass="root*123";
+                $this->host="107.180.46.246:3306";
+                $this->ddbb="sigtor_pruebas";
 	}
 
 	function connect(){
