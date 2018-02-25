@@ -1,5 +1,5 @@
 <?php
-$categories = EquipoData::getAll();
+$deportes = DeportesData::getAll();
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -22,19 +22,6 @@ $categories = EquipoData::getAll();
                     </div>
 
                     <div class="form-group">
-                        <label for="inputEmail1" class="col-lg-2 control-label">Tipo de Torneo*</label>
-                        <div class="col-md-6">
-                            <select name="TipoTorneo" class="form-control">
-                                <option value="">-- SELECCIONE --</option>      
-                                <option value="Futboal 8">Futboal 8</option>
-                                <option value="Futboal 5">Futboal 5</option>
-                                <option value="Voleibol">Voleibol</option>
-                                <option value="Baloncesto">Baloncesto</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Fecha de inicio del torneo
                         </label>
@@ -50,10 +37,22 @@ $categories = EquipoData::getAll();
                                    id="FechaFin" placeholder="Fecha de Nacimiento">
                         </div>
                     </div>       
+                    
+                      <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">Entidad a la que pertenece*</label>
+                        <div class="col-md-6">
+                            <select name="Deportes_idDeportes" class="form-control">
+                                <option value="">-- SELECCIONE --</option>      
+                                <?php foreach ($deportes as $dep): ?>
+                                    <option value="<?php echo $dep->Deportes_idDeportes; ?>"><?php echo $dep->Nombre_Deportes; ?></option>      
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-primary">Agregar Jugador</button>
+                            <button type="submit" class="btn btn-primary">Agregar Torneo</button>
                         </div>
                     </div>
                 </form>

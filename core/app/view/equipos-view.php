@@ -61,7 +61,7 @@
                     </table>
                     <?php
                 } else {
-                    echo "<p class='alert alert-danger'>No hay medicos</p>";
+                    echo "<p class='alert alert-danger'>No hay eqipos</p>";
                 }
                 ?>
 

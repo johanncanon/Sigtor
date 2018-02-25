@@ -112,6 +112,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="./?view=deportes">
+                                    <i class="fa fa-dribbble"></i>
+                                    <p>Deportes</p>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="./?view=fases">
                                     <i class="fa fa-calendar-check-o"></i>
                                     <p>Fases</p>
