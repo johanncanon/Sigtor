@@ -25,6 +25,7 @@
                         <th>Tel Representante</th>
                         <th>Correo del Representante</th>
                         <th>Entidad</th>
+                        <th>Torneo</th>
                         <th></th>
                         </thead>
                         <?php
@@ -40,6 +41,12 @@
                                 <td><?php
                                     if ($user->Entidad_idEntidad != null) {
                                         echo $user->getEntidad()->Nombre_Entidad;
+                                    }
+                                    ?>
+                                </td>
+                                <td><?php
+                                    if ($user->IdTorneo != null) {
+                                        echo $user->getTorneo()->NombreTorneo;
                                     }
                                     ?>
                                 </td>

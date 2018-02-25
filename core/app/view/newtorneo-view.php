@@ -1,12 +1,12 @@
 <?php
-$deportes = DeportesData::getAll();
+$categories = DeporteData::getAll();
 ?>
 <div class="row">
     <div class="col-md-12">
 
         <div class="card">
             <div class="card-header" data-background-color="blue">
-                <h4 class="title">Nuevo Torneo Deportivo</h4>
+                <h4 class="title">Agregar Torneo Deportivo</h4>
             </div>
             <div class="card-content table-responsive">
                 <form class="form-horizontal" method="post" id="addproduct" action="index.php?view=addtorneo" role="form">
@@ -20,7 +20,17 @@ $deportes = DeportesData::getAll();
                                    id="NombreTorneo" placeholder="Nombre del Torneo">
                         </div>
                     </div>
-
+                              <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">Entidad a la que pertenece*</label>
+                        <div class="col-md-6">
+                            <select name="Deportes_idDeportes" class="form-control">
+                                <option value="">-- SELECCIONE --</option>      
+                                <?php foreach ($categories as $cat): ?>
+                                    <option value="<?php echo $cat->idDeportes; ?>"><?php echo $cat->Nombre_Deportes; ?></option>      
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Fecha de inicio del torneo

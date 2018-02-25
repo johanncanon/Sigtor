@@ -22,7 +22,6 @@
                         <th>Nombre Torneo</th>
                         <th>Fecha Inicial</th>
                         <th>Fecha Final</th>
-                        <th>Deporte</th>
                         <th></th>
                         </thead>
                         <?php
@@ -32,12 +31,6 @@
                                 <td><?php echo $user->NombreTorneo; ?></td>
                                 <td><?php echo $user->FechaInicio; ?></td>
                                 <td><?php echo $user->FechaFin; ?></td>
-                                <td><?php
-                                    if ($user->Deportes_idDeportes != null) {
-                                        echo $user->getDeportes()->Nombre_Deportes;
-                                    }
-                                    ?>
-                                </td>
 
                                 <td style="width:280px;">
                                     <a href="index.php?view=medichistory&id=<?php echo $user->id; ?>" class="btn btn-default btn-xs">Historial</a>

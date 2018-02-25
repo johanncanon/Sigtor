@@ -12,17 +12,24 @@ class TorneoData {
         $this->Deportes_idDeportes = "";
     }
 
-    public function add() {
-        $sql = "insert into Torneo ( NombreTorneo,TipoTorneo,"
-                    . "FechaInicio, FechaFin , Deportes_idDeportes )"
-                . "value ( \"$this->NombreTorneo\","
-                    . "\"$this->TipoTorneo\","
-                    . "\"$this->FechaInicio\","
-                    . "\"$this->FechaFin\""
-                    . "\"$this->Deportes_idDeportes\") ";
-
-        Executor::doit($sql);
-    }
+	public function CategoryData(){
+		$this->NombreTorneo = "";
+		$this->Deportes_idDeportes = "";
+		$this->FechaInicio = "";
+		$this->FechaInicio = "";
+	}
+        public function getDeportes(){ return DeporteData::getById($this->Deportes_idDeportes); }
+	public function add(){
+            
+               $sql = "INSERT INTO ".self::$tablename." ( `NombreTorneo`, "
+                            . " `FechaInicio`, `FechaFin`,"
+                            . " `Deportes_idDeportes`) "
+                    . "VALUES (\"$this->NombreTorneo\","
+                            . " \"$this->FechaInicio\" ,"
+                            . " \"$this->FechaFin\" ,"
+                            . " \"$this->Deportes_idDeportes\" )";         
+		Executor::doit($sql);
+	}
 
     public function getDeportes() {
         return DeportesData::getById($this->Deportes_idDeportes);
@@ -44,11 +51,11 @@ class TorneoData {
         Executor::doit($sql);
     }
 
-    public static function getById($id) {
-        $sql = "select * from " . self::$tablename . " where id=$id";
-        $query = Executor::doit($sql);
-        return Model::one($query[0], new TorneoData());
-    }
+	public static function getById($id){
+		$sql = "select * from ".self::$tablename." where idtorneo=$id";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new CategoryData());
+	}
 
     public static function getAll() {
         $sql = "select * from " . self::$tablename;
