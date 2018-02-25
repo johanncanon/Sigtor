@@ -11,15 +11,15 @@ class JugadorData {
                 $this->Celular = "";
                 $this->Tiene_ARL = "";
                 $this->Sexo = "";
-		
+
 	}
 
-	public function getEquipo(){ 
-            return EquipoData::getById($this->Equipo_idEquipo); 
-            
+	public function getEquipo(){
+            return EquipoData::getById($this->Equipo_idEquipo);
+
         }
 	public function add(){
-            
+
                $sql = "INSERT INTO ".self::$tablename." ( `Equipo_idEquipo`, "
                             . " `Nombres`, `Apellidos`,"
                             . " `Edad`, `Cedula`, "
@@ -33,7 +33,7 @@ class JugadorData {
                             . " \"$this->Telefono\", "
                             . " \"$this->Celular\" ,"
                             . " \"$this->Tiene_ARL\" ,"
-                            . " \"$this->Sexo\" )";    
+                            . " \"$this->Sexo\" )";
 		Executor::doit($sql);
 	}
 	public static function delById($id){

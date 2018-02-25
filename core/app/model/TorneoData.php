@@ -5,14 +5,20 @@ class TorneoData {
 
 	public function CategoryData(){
 		$this->NombreTorneo = "";
-		$this->TIpoTorneo = "";
+		$this->Deportes_idDeportes = "";
 		$this->FechaInicio = "";
 		$this->FechaInicio = "";
 	}
-
+        public function getDeportes(){ return DeporteData::getById($this->Deportes_idDeportes); }
 	public function add(){
-                $sql = "insert into ".self::$tablename." (NombreTorneo,TipoTorneo,FechaInicio,FechaFin) ";
-		$sql .= "value (\"$this->NombreTorneo\",\"$this->TipoTorneo\",\"$this->FechaInicio\",\"$this->FechaFin\")";
+            
+               $sql = "INSERT INTO ".self::$tablename." ( `NombreTorneo`, "
+                            . " `FechaInicio`, `FechaFin`,"
+                            . " `Deportes_idDeportes`) "
+                    . "VALUES (\"$this->NombreTorneo\","
+                            . " \"$this->FechaInicio\" ,"
+                            . " \"$this->FechaFin\" ,"
+                            . " \"$this->Deportes_idDeportes\" )";         
 		Executor::doit($sql);
 	}
 
@@ -32,7 +38,7 @@ class TorneoData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where id=$id";
+		$sql = "select * from ".self::$tablename." where idtorneo=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CategoryData());
 	}

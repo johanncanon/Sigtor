@@ -16,7 +16,9 @@ class EquipoData {
 	public function getEntidad(){ 
             return EntidadData::getById($this->Entidad_idEntidad);         
         }
-
+        public function getTorneo(){ 
+            return TorneoData::getById($this->IdTorneo);         
+        }
         /**
          * funcion para ingresar Equipos desde la vista
          */
@@ -25,14 +27,15 @@ class EquipoData {
                $sql = "INSERT INTO ".self::$tablename." ( `Entidad_idEntidad`, "
                             . " `Nombre_Equipo`, `Num_Jugadores`,"
                             . " `RepresentanteNombre`, `EntrenadorNombre`, "
-                            . " `Tel_Representante`, `Correo_Representante` ) "
+                            . " `Tel_Representante`, `Correo_Representante`, `IdTorneo` ) "
                     . "VALUES ($this->Entidad_idEntidad ,"
                             . " \"$this->Nombre_Equipo\" ,"
                             . " $this->Num_Jugadores,"
                             . " \"$this->RepresentanteNombre\" ,"
                             . " \"$this->EntrenadorNombre\", "
                             . " \"$this->Tel_Representante\" ,"
-                            . " \"$this->Correo_Representante\" )";                  
+                            . " \"$this->Correo_Representante\" ,"
+                            . " $this->IdTorneo)";
 		Executor::doit($sql);
 	}
 

@@ -9,15 +9,15 @@ if (count($_POST) > 0) {
     $user->Tel_Representante = $_POST["Tel_Representante"];
     $user->Correo_Representante = $_POST["Correo_Representante"];
     $category_id = "NULL";
-   // $puntos_id = "NULL";
     if ($_POST["Entidad_idEntidad"] != "") {
         $category_id = $_POST["Entidad_idEntidad"];
     }
-//    if ($_POST["PuntosEquipo_idPuntosEquipo"] != "") {
-//        $puntos_id = $_POST["PuntosEquipo_idPuntosEquipo"];
-//    }
     $user->Entidad_idEntidad = $category_id;
-//    $user->PuntosEquipo_idPuntosEquipo = $puntos_id;
+   $torneo_id = "NULL";
+    if ($_POST["IdTorneo"] != "") {
+        $torneo_id = $_POST["IdTorneo"];
+    }
+    $user->IdTorneo = $torneo_id;
     $user->add();
 
     print "<script>window.location='index.php?view=equipos';</script>";
