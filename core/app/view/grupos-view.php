@@ -194,29 +194,33 @@
                             </div>
                         </div>
 
-                    
+
                         <div class="col-lg-5">
                             <div class="form-group"> 
                                 <button class="btn btn-info btn-inverse" >
                                     Finalizar Fase
                                     <span class="fa fa-2x fa-check-circle"></span>
                                 </button>
+                                 <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                                    Equipos Clasificados
+                                    <span class="fa fa-2x fa-check-square"></span>
+                                </button>
                             </div>
+                           
+                            
                         </div>
-                        
                         <div style="margin: 43px 0px; padding: 47px;">
                         </div>
 
                     </div>
 
-                   
-
-
-
                 </div>
 
-            </div>
 
+
+            </div>
         </div>
     </div>
-</div>
+
+
