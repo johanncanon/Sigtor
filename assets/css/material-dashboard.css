@@ -2836,7 +2836,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 .modal-content .modal-footer {
   border-top: none;
-  padding: 7px;
+    padding: 28px;
 }
 .modal-content .modal-footer.text-center {
   text-align: center;
@@ -2861,11 +2861,20 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .modal-backdrop {
-  background: rgba(0, 0, 0, 0.3);
+      position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: auto;
+    background-color: #00000087 !important;
 }
+
 
 .modal .modal-dialog {
   margin-top: 100px;
+      z-index: 1200000 !important;
+    position: relative;
 }
 .modal .modal-header .close {
   color: #999999;
