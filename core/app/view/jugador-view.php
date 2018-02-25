@@ -43,9 +43,11 @@
                                 <td><?php echo $user->Cedula; ?></td>
                                 <td><?php echo $user->Telefono; ?></td>
                                 <td><?php echo $user->Celular; ?></td>
-                                <td><?php if ($user->Equipo_idEquipo != null) {
-                        echo $user->getEquipo()->Nombre_Equipo;
-                    } ?></td>
+                                <td><?php
+                                    if ($user->Equipo_idEquipo != null) {
+                                        echo $user->getEquipo()->Nombre_Equipo;
+                                    }
+                                    ?></td>
                                 <td style="width:280px;">
                                     <a href="index.php?view=medichistory&id=<?php echo $user->id; ?>" class="btn btn-default btn-xs">Historial</a>
                                     <a href="index.php?view=editmedic&id=<?php echo $user->id; ?>" class="btn btn-warning btn-xs">Editar</a>
@@ -53,7 +55,7 @@
 
                                 </td>
                             </tr>
-                           <?php
+                            <?php
                         }
                         ?>
                     </table>

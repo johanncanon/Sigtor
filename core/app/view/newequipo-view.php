@@ -1,5 +1,6 @@
 <?php
 $categories = EntidadData::getAll();
+$torneo = TorneoData::getAll();
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -10,7 +11,7 @@ $categories = EntidadData::getAll();
             </div>
             <div class="card-content table-responsive">
                 <form class="form-horizontal" method="post" id="addproduct" action="index.php?view=addequipo" role="form">
-                    
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Nombre del equipo*
@@ -20,7 +21,7 @@ $categories = EntidadData::getAll();
                                    id="Nombre_Equipo" placeholder="Nombre del equipo">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Numero de Jugadores*
@@ -30,8 +31,8 @@ $categories = EntidadData::getAll();
                                    id="Num_Jugadores" placeholder="Numero de Jugadores">
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Nombre del Representante
@@ -41,7 +42,7 @@ $categories = EntidadData::getAll();
                                    id="RepresentanteNombre" placeholder="Nombre del Representante">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Nombre del Entrenador
@@ -51,7 +52,7 @@ $categories = EntidadData::getAll();
                                    id="EntrenadorNombre" placeholder="Nombre del Entrenador">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Telefono del Representante
@@ -61,7 +62,7 @@ $categories = EntidadData::getAll();
                                    id="Tel_Representante" placeholder="Telefono del Representante">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="inputEmail1" class="col-lg-2 control-label">
                             Correo del Representante
@@ -82,7 +83,17 @@ $categories = EntidadData::getAll();
                             </select>
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">Torneo en el que participara*</label>
+                        <div class="col-md-6">
+                            <select name="IdTorneo" class="form-control">
+                                <option value="">-- SELECCIONE --</option>      
+                                <?php foreach ($torneo as $tor): ?>
+                                    <option value="<?php echo $tor->idtorneo; ?>"><?php echo $tor->NombreTorneo; ?></option>      
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
