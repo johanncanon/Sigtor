@@ -18,8 +18,8 @@ class TorneoData {
 		$this->FechaInicio = "";
 		$this->FechaInicio = "";
 	}
-        public function getDeportes(){ return DeporteData::getById($this->Deportes_idDeportes); }
-	public function add(){
+        
+    public function add(){
             
                $sql = "INSERT INTO ".self::$tablename." ( `NombreTorneo`, "
                             . " `FechaInicio`, `FechaFin`,"
