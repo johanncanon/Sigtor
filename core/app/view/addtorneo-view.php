@@ -14,4 +14,3 @@ if (count($_POST) > 0) {
 
 print "<script>window.location='index.php?view=torneo';</script>";
 }
-?>
