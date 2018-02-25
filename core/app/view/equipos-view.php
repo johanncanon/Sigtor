@@ -50,6 +50,12 @@
                                     }
                                     ?>
                                 </td>
+                                <td><?php
+                                    if ($user->IdTorneo != null) {
+                                        echo $user->getTorneo()->NombreTorneo;
+                                    }
+                                    ?>
+                                </td>
                                 <td style="width:280px;">
                                     <a href="index.php?view=editequipo&id=<?php echo $user->idEquipo; ?>" 
                                        class="btn btn-warning btn-xs">
